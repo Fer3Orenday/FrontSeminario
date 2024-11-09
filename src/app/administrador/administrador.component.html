@@ -1,53 +1,109 @@
-<!-- administrador.component.html -->
-<div class="admin-container">
-    <h2>Lista de Usuarios</h2>
+<body>
+  <br>
+  <br>
+<div id="admin-container" class="content-container">
+  <h2>Lista de Usuarios</h2>
 
-    <!-- Si hay un error, mostrar mensaje -->
-    <div *ngIf="errorMessage" class="error-message">
-        {{ errorMessage }}
-    </div>
+  <!-- Mensaje de error -->
+  <div *ngIf="errorMessage" id="error-message" class="error-message">
+      {{ errorMessage }}
+  </div>
 
-    <!-- Tabla de usuarios -->
-    <table *ngIf="users.length > 0" class="user-table">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Correo Electrónico</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let user of users">
-                <td>{{ user.name }}</td>
-                <td>{{ user.email }}</td>
-            </tr>
-        </tbody>
-    </table>
+  <!-- Tabla de usuarios -->
+  <table *ngIf="users.length > 0" id="user-table" class="styled-table">
+      <thead>
+          <tr>
+              <th>Nombre</th>
+              <th>Correo Electrónico</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let user of users">
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+          </tr>
+      </tbody>
+  </table>
 
-    <!-- Mensaje si no hay usuarios -->
-    <p *ngIf="users.length === 0" class="no-users-message">No hay usuarios registrados</p>
+  <!-- Mensaje si no hay usuarios -->
+  <p *ngIf="users.length === 0" class="no-data-message">No hay usuarios registrados</p>
 
-    <!-- Tabla de usuarios -->
-    <table *ngIf="users.length > 0" class="user-table">
-        <thead>
-            <tr>
-                <th>Usuario</th>
-                <th>Tipo de prestamo</th>
-                <th>Cantidad</th>
-                <th>Institución</th>
-                <th>Años</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let registro of registros">
-                <td>{{ registro.user }}</td>
-                <td>{{ getTypeLabel(registro.type) }}</td>
-                <td>{{ registro.amount }}</td>
-                <td>{{ registro.institution }}</td>
-                <td>{{ registro.years }}</td>
-            </tr>
-        </tbody>
-    </table>
+  <!-- Tabla de registros -->
+  <table *ngIf="registros.length > 0" id="registro-table" class="styled-table">
+      <thead>
+          <tr>
+              <th>Usuario</th>
+              <th>Tipo de préstamo</th>
+              <th>Cantidad</th>
+              <th>Institución</th>
+              <th>Años</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let registro of registros">
+              <td>{{ registro.user }}</td>
+              <td>{{ getTypeLabel(registro.type) }}</td>
+              <td>{{ registro.amount }}</td>
+              <td>{{ registro.institution }}</td>
+              <td>{{ registro.years }}</td>
+          </tr>
+      </tbody>
+  </table>
 
-    <!-- Mensaje si no hay usuarios -->
-    <p *ngIf="users.length === 0" class="no-users-message">No hay usuarios registrados</p>
+  <!-- Mensaje si no hay registros -->
+  <p *ngIf="registros.length === 0" class="no-data-message">No hay registros</p>
 </div>
+
+<div id="form-container" class="content-container">
+  <h2>Registro de Bancos</h2>
+  <form [formGroup]="bancoForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+          <label for="nombre">Banco:</label>
+          <input id="nombre" formControlName="nombre" type="text" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+          <label for="interes">Interés:</label>
+          <input id="interes" formControlName="interes" type="text" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+          <label for="anio">Años:</label>
+          <input id="anio" formControlName="anio" type="text" class="form-control" placeholder="Ejemplo: 10, 78, 98" required />
+          <small>Ingrese los años separados por comas.</small>
+      </div>
+
+      <div class="form-group">
+          <label for="enganche">Enganche:</label>
+          <input id="enganche" formControlName="enganche" type="text" class="form-control" required />
+      </div>
+
+      <button type="submit" id="register-button" class="btn btn-primary" [disabled]="bancoForm.invalid">Registrar</button>
+  </form>
+
+  <h3>Lista de Bancos Registrados</h3>
+  <table id="bank-table" class="styled-table">
+      <thead>
+          <tr>
+              <th>Banco</th>
+              <th>Interés</th>
+              <th>Año</th>
+              <th>Enganche</th>
+              <th>Acciones</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let banco of bancos">
+              <td>{{ banco.nombre }}</td>
+              <td>{{ banco.interes }}</td>
+              <td>{{ banco.anio.join(', ') }}</td>
+              <td>{{ banco.enganche }}</td>
+              <td>
+                  <button (click)="editBanco(banco)" class="btn btn-warning">Editar</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+<br><br>
+</body>

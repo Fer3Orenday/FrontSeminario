@@ -26,7 +26,7 @@ export class LoginComponent {
         next: (response) => {
           localStorage.setItem('user', JSON.stringify(response.user));
           if (response.user.type === 'user') {
-            this.router.navigate(['/calculadora']);
+            this.router.navigate(['/menu']);
           } else {
             this.router.navigate(['/administrador']);
           }

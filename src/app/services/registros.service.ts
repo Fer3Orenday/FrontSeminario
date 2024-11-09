@@ -19,4 +19,8 @@ export class RegistrosService {
   registro(registro: { user: string, type: string, amount: number, institution: string, years: number }): Observable<any> {
     return this.http.post<any>(this.apiUrl + 'registros', registro);
   }
+
+  getBancos(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl + 'bancos');
+  }
 }

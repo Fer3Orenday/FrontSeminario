@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RegistroComponent } from './registro/registro.component';
 import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { MenuUsuarioComponent } from './menu-usuario/menu-usuario.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     RegistroComponent,
     CalculadoraComponent,
     AdministradorComponent,
-    NavBarComponent
+    NavBarComponent,
+    MenuUsuarioComponent
   ],
   imports: [
     BrowserModule,

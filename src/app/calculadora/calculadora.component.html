@@ -1,3 +1,6 @@
+<body>
+    
+
 <div class="loan-simulator">
     <h2>Calculadora de Préstamos</h2>
 
@@ -19,20 +22,22 @@
         <input id="amount" type="number" [(ngModel)]="amount" placeholder="Ingrese el costo de la vivienda" />
     </div>
 
-    <div class="form-group">
-        <label for="institution">Selecciona la Institución:</label>
-        <select id="institution" [(ngModel)]="institution" (change)="onInstitutionChange()">
-            <option value="bbva">BBVA</option>
-            <option value="hsbc">HSBC</option>
-            <option value="infonavit">Infonavit</option>
-        </select>
+    <div *ngIf="bancos.length > 0">
+        <div class="form-group">
+            <label for="institution">Selecciona la Institución:</label>
+            <select id="institution" [(ngModel)]="institution" (change)="onInstitutionChange()">
+                <option *ngFor="let banco of bancos; let i = index" [value]="i">
+                   {{ banco.nombre }}
+                </option>
+            </select>
+        </div>
     </div>
 
-    <div *ngIf="institutionData[institution]?.availableTerms && institutionData[institution].availableTerms.length > 0"
-        class="form-group">
+
+    <div *ngIf="bancos[institution]?.anio && bancos[institution].anio.length > 0" class="form-group">
         <label for="loanTerm">Selecciona el Plazo del Préstamo:</label>
         <select id="loanTerm" [(ngModel)]="loanTerm">
-            <option *ngFor="let term of institutionData[institution].availableTerms" [value]="term">{{ term }} años
+            <option *ngFor="let term of bancos[institution].anio" [value]="term">{{ term }} años
             </option>
         </select>
     </div>
@@ -77,10 +82,11 @@
 
     <div *ngIf="amortizationTable.length > 0" class="total-payment">
         <h4>Total a Pagar al Final del Préstamo: {{ totalPayment | currency }}</h4>
-    </div>    
+    </div>
 
     <!-- Botón para compartir información -->
     <div class="form-group" *ngIf="amortizationTable.length > 0">
-        <button (click)="saveData()">Compartir Información con un Administrador</button>
+        <button (click)="saveData()">Guardar</button>
     </div>
 </div>
+</body>
