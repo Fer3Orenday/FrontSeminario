@@ -1,0 +1,93 @@
+/* Estilos generales para el contenedor */
+.login-container {
+    background-color: red; /* Fondo rojo */
+    height: 100vh;  /* Asegura que ocupe toda la altura de la ventana */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tarjeta del formulario de login */
+.login-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.login-title {
+    font-size: 1.8rem;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #555555;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 94%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f7f7f7;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #e63946;
+    outline: none;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e63946;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #d62828;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #e63946;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
