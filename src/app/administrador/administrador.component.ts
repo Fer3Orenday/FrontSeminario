@@ -16,6 +16,7 @@ export class AdministradorComponent implements OnInit {
   registros: any;
   bancoForm!: FormGroup;
   bancos: any[] = [];
+  _id: any;
 
   constructor(
     private userService: AuthService,
@@ -82,10 +83,10 @@ export class AdministradorComponent implements OnInit {
       const formValue = this.bancoForm.value;
       // Convertir 'anio' en un arreglo de números (si es necesario)
       formValue.anio = formValue.anio.split(',').map((year: string) => Number(year.trim()));
-  
-      if (formValue.id) {
+
+      if (this._id) {
         // Si el formulario tiene un ID, actualizar el banco (editar)
-        this.bancosService.editBancos(formValue.id, formValue).subscribe(
+        this.bancosService.editBancos(this._id, formValue).subscribe(
           (response) => {
             // Después de la actualización, recargar la lista de bancos
             this.loadBancos();
@@ -130,8 +131,8 @@ export class AdministradorComponent implements OnInit {
       anio: banco.anio.join(', '),  // Convertir el arreglo de años a una cadena separada por comas
       enganche: banco.enganche
     });
-  
+
     // Añadir el ID del banco al formulario para actualizarlo
-    this.bancoForm.addControl('id', this.fb.control(banco.id));
+    this._id = banco._id;
   }
 }

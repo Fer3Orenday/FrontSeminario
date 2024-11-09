@@ -1,0 +1,110 @@
+/* Contenedor Principal */
+.content-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 90%;
+  }
+  
+  /* Títulos */
+  h2, h3 {
+    color: hsl(219, 45%, 29%);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  /* Mensajes */
+  .error-message {
+    color: #d32f2f;
+    background-color: #fdecea;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .no-data-message {
+    color: #616161;
+    font-style: italic;
+    text-align: center;
+  }
+  
+  /* Estilos de Tablas */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .styled-table thead {
+    background-color: hsl(219, 45%, 29%);
+    color: #fff;
+  }
+  
+  .styled-table th, .styled-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .styled-table tbody tr:hover {
+    background-color: #e0f7fa;
+  }
+  
+  /* Botones */
+  button.btn-primary, button.btn-warning {
+    background-color: hsl(219, 45%, 29%);
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.btn-primary:hover {
+    background-color: hsl(218, 38%, 55%);
+  }
+  
+  button.btn-warning {
+    background-color: #ffa726;
+  }
+  
+  button.btn-warning:hover {
+    background-color: #fb8c00;
+  }
+  
+  /* Formulario */
+  .form-group label {
+    color: hsl(219, 45%, 29%);
+    font-weight: 500;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  #register-button {
+    width: 100%;
+  }
+
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #cdced1;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }

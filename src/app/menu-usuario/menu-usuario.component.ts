@@ -8,10 +8,13 @@ import { Router } from '@angular/router';
 })
 export class MenuUsuarioComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
-  navigateToCotizacion() {
-    this.router.navigate(['/calculadora']);
+  navigateToCotizacion(menu: number) {
+    if (menu === 1) {
+      this.router.navigate(['/calculadora']);
+    } else {
+      this.router.navigate(['/cotizaciones']);
+    }
   }
-
 }

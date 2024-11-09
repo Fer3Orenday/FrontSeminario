@@ -12,6 +12,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MenuUsuarioComponent } from './menu-usuario/menu-usuario.component';
+import { CotizacionesComponent } from './cotizaciones/cotizaciones.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MenuUsuarioComponent } from './menu-usuario/menu-usuario.component';
     CalculadoraComponent,
     AdministradorComponent,
     NavBarComponent,
-    MenuUsuarioComponent
+    MenuUsuarioComponent,
+    CotizacionesComponent
   ],
   imports: [
     BrowserModule,

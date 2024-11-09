@@ -119,7 +119,7 @@ export class CalculadoraComponent implements OnInit {
       user: this.user.email,
       type: this.loanType,
       amount: this.loanType === 'homeValue' ? this.amount : this.salary,
-      institution: this.bancos[this.institution],
+      institution: this.bancos[this.institution].nombre,
       years: this.loanTerm
     };
 
