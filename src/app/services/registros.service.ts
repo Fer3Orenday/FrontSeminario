@@ -22,5 +22,10 @@ export class RegistrosService {
 
   getBancos(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl + 'bancos');
+}
+
+  // Método para eliminar un registro
+  deleteRegistrosByEmail(email: string): Observable<any> {
+    return this.http.delete<any>(this.apiUrl + 'registros/' + email);  
   }
 }

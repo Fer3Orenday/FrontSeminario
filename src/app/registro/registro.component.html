@@ -10,6 +10,36 @@
             </div>
 
             <div class="form-group">
+                <label for="lastName">Apellido Paterno</label>
+                <input type="text" id="lastName" formControlName="lastName" required placeholder="Apellido paterno">
+            </div>
+
+            <div class="form-group">
+                <label for="middleName">Apellido Materno</label>
+                <input type="text" id="middleName" formControlName="middleName" required placeholder="Apellido materno">
+            </div>
+
+            <div class="form-group">
+                <label for="rfc">RFC</label>
+                <input type="text" id="rfc" formControlName="rfc" required placeholder="RFC">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Edad</label>
+                <input type="number" id="age" formControlName="age" required placeholder="Edad">
+            </div>
+
+            <div class="form-group">
+                <label for="registerDate">Fecha de alta</label>
+                <input type="date" id="registerDate" formControlName="registerDate" required placeholder="Fecha de alta">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input type="tel" id="phone" formControlName="phone" required placeholder="Teléfono">
+            </div>
+
+            <div class="form-group">
                 <label for="email">Correo Electrónico</label>
                 <input type="email" id="email" formControlName="email" required placeholder="Correo electrónico">
             </div>
@@ -26,7 +56,7 @@
                     <option value="admin">Administrador</option>
                     <option value="user">Usuario</option>
                 </select>
-            </div>
+            </div>            
 
             <button type="submit" [disabled]="registerForm.invalid">Registrar</button>
         </form>
