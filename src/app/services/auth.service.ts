@@ -23,4 +23,9 @@ export class AuthService {
   loginUser(user: { email: string, password: string }): Observable<any> {
     return this.http.post<any>(this.apiUrl + 'login', user);
   }
+
+  // Método para eliminar un usuario
+  deleteUser(userId: string): Observable<any> {
+    return this.http.delete<any>(this.apiUrl + 'users/' +userId);
+  }
 }

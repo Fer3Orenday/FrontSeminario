@@ -15,12 +15,19 @@
           <tr>
               <th>Nombre</th>
               <th>Correo Electrónico</th>
+              <th>Eliminar</th>
           </tr>
       </thead>
       <tbody>
           <tr *ngFor="let user of users">
               <td>{{ user.name }}</td>
               <td>{{ user.email }}</td>
+              <td>
+                <!-- Botón de eliminar -->
+                <button (click)="deleteUser(user)" class="delete-button">
+                    🗑️
+                </button>
+            </td>
           </tr>
       </tbody>
   </table>

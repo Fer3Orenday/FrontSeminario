@@ -1,89 +1,93 @@
 /* Contenedor de Registro */
 .register-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #b0b0b3;
-  }
-  
-  /* Tarjeta de Registro */
-  .register-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-  }
-  
-  /* Título */
-  .register-card h2 {
-    font-family: 'Roboto', sans-serif;
-    color: hsl(219, 45%, 29%);
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-  
-  /* Formulario */
-  .form-group {
-    text-align: left;
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    color: hsl(219, 45%, 29%);
-    font-weight: 500;
-    display: block;
-    margin-bottom: 8px;
-  }
-  
-  .form-group input[type="text"],
-  .form-group input[type="email"],
-  .form-group input[type="password"],
-  .form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-top: 5px;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  /* Botón de Registro */
-  button[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    background-color: hsl(219, 45%, 29%);
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: hsl(218, 38%, 55%);
-  }
-  
-  button[type="submit"]:disabled {
-    background-color: #b0bec5;
-    cursor: not-allowed;
-  }
-  
-  /* Mensaje de Error */
-  .error-message {
-    color: #d32f2f;
-    font-size: 14px;
-    margin-top: 10px;
-  }
-  
-  img{
-    width: 40%;
-    height: 40%;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #b0b0b3;
+}
+
+/* Tarjeta de Registro */
+.register-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Título */
+.register-card h2 {
+  font-family: 'Roboto', sans-serif;
+  color: hsl(219, 45%, 29%);
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Formulario */
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  color: hsl(219, 45%, 29%);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Estilos para todos los tipos de input */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group input[type="tel"],
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Botón de Registro */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: hsl(219, 45%, 29%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: hsl(218, 38%, 55%);
+}
+
+button[type="submit"]:disabled {
+  background-color: #b0bec5;
+  cursor: not-allowed;
+}
+
+/* Mensaje de Error */
+.error-message {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+img {
+  width: 40%;
+  height: 40%;
+}

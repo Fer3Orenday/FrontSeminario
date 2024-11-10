@@ -15,10 +15,16 @@ export class RegistroComponent {
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
+      lastName: ['', Validators.required],
+      middleName: [''],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      type: ['', Validators.required]  // Nuevo campo para tipo de usuario
-    });
+      rfc: ['', Validators.required],
+      age: ['', [Validators.required, Validators.min(0), Validators.max(120)]],
+      registerDate: ['', Validators.required],
+      phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
+      type: ['', Validators.required]  // Asegúrate de que el campo se llama 'type'
+    });    
   }
 
   onSubmit() {
