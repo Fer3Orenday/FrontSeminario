@@ -7,13 +7,14 @@
     margin: 20px auto;
     max-width: 90%;
   }
-  
+
   /* Títulos */
   h2, h3 {
     color: hsl(219, 45%, 29%);
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     margin-bottom: 20px;
+    text-align: center;
   }
   
   /* Mensajes */

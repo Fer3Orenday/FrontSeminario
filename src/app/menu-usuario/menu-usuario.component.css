@@ -1,58 +1,59 @@
 /* Fondo general y centrar contenido */
 body {
-    background-color: #9c9c9d;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  /* Contenedor principal para las opciones de cotización */
-  .quote-container {
-    width: 400px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* Título principal */
-  .quote-container h2 {
-    color: hsl(219, 45%, 29%);
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-  
-  /* Grupo de botones */
-  .button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-  }
-  
-  /* Estilos para los botones de cotización */
-  .quote-button {
-    padding: 15px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #ffffff;
-    background-color: hsl(219, 45%, 29%);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-  }
-  
-  .quote-button:hover {
-    background-color: hsl(218, 38%, 55%);
-  }
-  
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Contenedor principal para las opciones de cotización */
+.quote-container {
+  width: 400px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -300px;
+}
+
+/* Título principal */
+.quote-container h2 {
+  color: hsl(219, 45%, 29%);
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Grupo de botones */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Estilos para los botones de cotización */
+.quote-button {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: hsl(219, 45%, 29%);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.quote-button:hover {
+  background-color: hsl(218, 38%, 55%);
+}
