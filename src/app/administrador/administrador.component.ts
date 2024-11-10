@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { RegistrosService } from '../services/registros.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-administrador',
@@ -58,4 +59,28 @@ export class AdministradorComponent implements OnInit {
     }
     return '';
   }
+
+  deleteUser(user: any) {
+    console.log("Usuario a eliminar:", user); // Verificar que user tiene el formato correcto
+    if (user && user._id) { // Asegurarse de que user no es undefined y tiene _id
+      const userId = user._id;
+      console.log("ID del usuario a eliminar:", userId);
+      this.userService.deleteUser(userId).subscribe(
+        response => {
+          console.log(response.message); // Mostrar mensaje de éxito en la consola
+          // Eliminar el usuario de la lista local sin recargar toda la lista
+          this.users = this.users.filter(u => u._id !== userId);
+        },
+        error => {
+          console.error('Error al eliminar usuario:', error);
+        }
+      );
+    } else {
+      console.error("Error: El usuario no tiene un ID válido.");
+    }
+  }
+  
+
+
+
 }

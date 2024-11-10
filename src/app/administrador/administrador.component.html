@@ -13,12 +13,19 @@
             <tr>
                 <th>Nombre</th>
                 <th>Correo Electrónico</th>
+                <th>Eliminar</th> <!-- Nueva columna para el botón de borrar -->
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let user of users">
                 <td>{{ user.name }}</td>
                 <td>{{ user.email }}</td>
+                <td>
+                    <!-- Botón de eliminar -->
+                    <button (click)="deleteUser(user)" class="delete-button">
+                        🗑️
+                    </button>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -26,12 +33,12 @@
     <!-- Mensaje si no hay usuarios -->
     <p *ngIf="users.length === 0" class="no-users-message">No hay usuarios registrados</p>
 
-    <!-- Tabla de usuarios -->
-    <table *ngIf="users.length > 0" class="user-table">
+    <!-- Tabla de registros de préstamos -->
+    <table *ngIf="registros.length > 0" class="user-table">
         <thead>
             <tr>
                 <th>Usuario</th>
-                <th>Tipo de prestamo</th>
+                <th>Tipo de préstamo</th>
                 <th>Cantidad</th>
                 <th>Institución</th>
                 <th>Años</th>
@@ -48,6 +55,6 @@
         </tbody>
     </table>
 
-    <!-- Mensaje si no hay usuarios -->
-    <p *ngIf="users.length === 0" class="no-users-message">No hay usuarios registrados</p>
+    <!-- Mensaje si no hay registros -->
+    <p *ngIf="registros.length === 0" class="no-users-message">No hay registros de préstamos</p>
 </div>

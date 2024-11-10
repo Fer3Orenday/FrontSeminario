@@ -19,4 +19,9 @@ export class RegistrosService {
   registro(registro: { user: string, type: string, amount: number, institution: string, years: number }): Observable<any> {
     return this.http.post<any>(this.apiUrl + 'registros', registro);
   }
+
+  // Método para eliminar un registro
+  deleteRegistro(registroId: string): Observable<any> {
+    return this.http.delete<any>(this.apiUrl + 'registros/' +registroId);
+  }
 }
