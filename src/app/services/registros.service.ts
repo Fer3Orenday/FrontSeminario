@@ -21,7 +21,7 @@ export class RegistrosService {
   }
 
   // Método para eliminar un registro
-  deleteRegistro(registroId: string): Observable<any> {
-    return this.http.delete<any>(this.apiUrl + 'registros/' +registroId);
+  deleteRegistrosByEmail(email: string): Observable<any> {
+    return this.http.delete<any>(this.apiUrl + 'registros/' + email);  
   }
 }

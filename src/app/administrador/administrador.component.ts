@@ -62,25 +62,42 @@ export class AdministradorComponent implements OnInit {
 
   deleteUser(user: any) {
     console.log("Usuario a eliminar:", user); // Verificar que user tiene el formato correcto
-    if (user && user._id) { // Asegurarse de que user no es undefined y tiene _id
+    if (user && user._id && user.email) { // Asegurarse de que user tiene _id y email
       const userId = user._id;
+      const userEmail = user.email; // Obtener el email para eliminar los registros asociados
       console.log("ID del usuario a eliminar:", userId);
-      this.userService.deleteUser(userId).subscribe(
+      console.log("Email del usuario a eliminar:", userEmail);
+  
+      // Primero, eliminar los registros asociados a este usuario
+      this.registrosService.deleteRegistrosByEmail(userEmail).subscribe(
         response => {
-          console.log(response.message); // Mostrar mensaje de éxito en la consola
-          // Eliminar el usuario de la lista local sin recargar toda la lista
-          this.users = this.users.filter(u => u._id !== userId);
+          console.log('Registros eliminados con éxito:', response.message);
+  
+          // Después, eliminar al usuario
+          this.userService.deleteUser(userId).subscribe(
+            response => {
+              console.log(response.message); // Mostrar mensaje de éxito en la consola
+  
+              // Recargar la lista de registros y usuarios
+              this.loadRegistros(); // Recargar los registros actualizados
+              this.loadUsers(); // Recargar los usuarios actualizados
+  
+              // Eliminar el usuario de la lista local sin recargar toda la lista
+              this.users = this.users.filter(u => u._id !== userId);
+            },
+            error => {
+              console.error('Error al eliminar usuario:', error);
+            }
+          );
         },
         error => {
-          console.error('Error al eliminar usuario:', error);
+          console.error('Error al eliminar los registros:', error);
         }
       );
     } else {
-      console.error("Error: El usuario no tiene un ID válido.");
+      console.error("Error: El usuario no tiene un ID o email válido.");
     }
   }
   
-
-
-
+  
 }
