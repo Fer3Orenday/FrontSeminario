@@ -22,10 +22,13 @@ export class CotizacionesComponent implements OnInit {
   }
 
   loadRegistros(): void {
+  
+    
     this.registrosService.getRegistro().subscribe(
       (data) => {
         // Filtrar los registros para excluir el usuario logueado
         this.registros = data.filter(registro => registro.user === this.user.email);
+        
       },
       (error) => {
         console.error(error);

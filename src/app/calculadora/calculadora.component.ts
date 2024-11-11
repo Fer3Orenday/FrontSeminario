@@ -120,7 +120,10 @@ export class CalculadoraComponent implements OnInit {
       type: this.loanType,
       amount: this.loanType === 'homeValue' ? this.amount : this.salary,
       institution: this.bancos[this.institution].nombre,
-      years: this.loanTerm
+      years: this.loanTerm,
+      montoPrestamo: this.amountBasedOnHomeValue,
+      enganche: this.downPaymentAmount,
+      totalPagar: this.totalPayment,
     };
 
     this.registrosService.registro(registro).subscribe({

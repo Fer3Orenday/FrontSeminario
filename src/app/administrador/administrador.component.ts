@@ -59,8 +59,11 @@ export class AdministradorComponent implements OnInit {
   loadRegistros(): void {
     this.registrosService.getRegistro().subscribe(
       (data) => {
+        console.log(data);
+        
         // Filtrar los registros para excluir el usuario logueado
         this.registros = data.filter(registro => registro.user !== this.user.email);
+        
       },
       (error) => {
         this.errorMessage = 'Hubo un error al cargar los registros';

@@ -14,14 +14,24 @@
       <thead>
           <tr>
               <th>Nombre</th>
+              <th>Apellido Paterno</th>
+              <th>Apellido Materno</th>
+              <th>Edad</th>
+              <th>Telefono</th>
               <th>Correo Electrónico</th>
+              <th>RFC</th>
               <th>Eliminar</th>
           </tr>
       </thead>
       <tbody>
           <tr *ngFor="let user of users">
               <td>{{ user.name }}</td>
+              <td>{{ user.lastName }}</td>
+              <td>{{ user.middleName }}</td>
+              <td>{{ user.age }}</td>
+              <td>{{ user.phone }}</td>
               <td>{{ user.email }}</td>
+              <td>{{ user.rfc }}</td>
               <td>
                 <!-- Botón de eliminar -->
                 <button (click)="deleteUser(user)" class="delete-button">

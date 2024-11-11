@@ -13,6 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MenuUsuarioComponent } from './menu-usuario/menu-usuario.component';
 import { CotizacionesComponent } from './cotizaciones/cotizaciones.component';
+import { PerfumeInterceptor } from './perfume-interceptor.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import { CotizacionesComponent } from './cotizaciones/cotizaciones.component';
     FormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    { provide: HTTP_INTERCEPTORS, useClass: PerfumeInterceptor, multi: true }
+
   ],
   bootstrap: [AppComponent]
 })
